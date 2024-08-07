@@ -17,7 +17,7 @@ enum Color {
     White,
     Black,
 }
-
+/* Other option to run 8 total bitboards instead of 12*/
 struct ChessBoard {
     pieces: [[Bitboard; 6]; 2],
     occupancy: [Bitboard; 2],
