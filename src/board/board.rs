@@ -1,5 +1,8 @@
+use raylib::prelude::*;
 use std::fmt;
 pub type Bitboard = u64;
+
+const SQUARE_SIZE: i32 = 64;
 
 #[derive(Copy, Clone, Debug)]
 pub enum PieceType {
@@ -18,7 +21,7 @@ pub enum Color {
 }
 /* Other option to run 8 total bitboards instead of 12*/
 pub struct ChessBoard {
-    pieces: [[Bitboard; 6]; 2],
+    pub pieces: [[Bitboard; 6]; 2],
     occupancy: [Bitboard; 2],
     all_pieces: Bitboard,
     side_to_move: Color,
@@ -75,8 +78,6 @@ impl ChessBoard {
             }
         }
     }
-
-    // Add more methods for move generation, making moves, etc.
 }
 
 impl fmt::Display for ChessBoard {
