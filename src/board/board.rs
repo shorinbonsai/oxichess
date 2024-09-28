@@ -48,7 +48,7 @@ impl ChessBoard {
     }
 
     pub fn set_starting_position(&mut self) {
-        // White pieces
+        // Black pieces
         self.pieces[Color::Black as usize][PieceType::Pawn as usize] = 0x00FF000000000000;
         self.pieces[Color::Black as usize][PieceType::Rook as usize] = 0x8100000000000000;
         self.pieces[Color::Black as usize][PieceType::Knight as usize] = 0x4200000000000000;
@@ -56,7 +56,7 @@ impl ChessBoard {
         self.pieces[Color::Black as usize][PieceType::Queen as usize] = 0x0800000000000000;
         self.pieces[Color::Black as usize][PieceType::King as usize] = 0x1000000000000000;
 
-        // Black pieces
+        // White pieces
         self.pieces[Color::White as usize][PieceType::Pawn as usize] = 0x000000000000FF00;
         self.pieces[Color::White as usize][PieceType::Rook as usize] = 0x0000000000000081;
         self.pieces[Color::White as usize][PieceType::Knight as usize] = 0x0000000000000042;

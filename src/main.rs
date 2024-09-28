@@ -15,7 +15,7 @@ fn draw_game(rl: &mut RaylibDrawHandle, thread: &RaylibThread, game: &ChessBoard
         for col in 0..8 {
             let square = row * 8 + col;
             let x = col * SQUARE_SIZE;
-            let y = row * SQUARE_SIZE;
+            let y = (7 - row) * SQUARE_SIZE;
             rl.draw_rectangle(
                 x,
                 y,
@@ -29,13 +29,13 @@ fn draw_game(rl: &mut RaylibDrawHandle, thread: &RaylibThread, game: &ChessBoard
             );
         }
     }
-    for rank in (0..8).rev() {
+    for rank in (0..8) {
         for file in 0..8 {
             let square = rank * 8 + file;
             let mask = 1u64 << square;
             let mut piece_char = '.';
             let x = file * SQUARE_SIZE;
-            let y = rank * SQUARE_SIZE;
+            let y = (7 - rank) * SQUARE_SIZE;
             // Draw the piece letter
             for color in 0..2 {
                 for (piece_type, &bitboard) in game.pieces[color].iter().enumerate() {
