@@ -1,7 +1,7 @@
 use std::fmt;
 mod board;
 use crate::board::board::*;
-
+use crate::board::moves::*;
 use raylib::prelude::*;
 const SQUARE_SIZE: i32 = 64;
 
