@@ -22,13 +22,13 @@ pub enum Color {
 /* Other option to run 8 total bitboards instead of 12*/
 pub struct ChessBoard {
     pub pieces: [[Bitboard; 6]; 2],
-    occupancy: [Bitboard; 2],
-    all_pieces: Bitboard,
-    side_to_move: Color,
-    castling_rights: u8,
-    en_passant: Option<u8>,
-    halfmove_clock: u8,
-    fullmove_number: u16,
+    pub occupancy: [Bitboard; 2],
+    pub all_pieces: Bitboard,
+    pub side_to_move: Color,
+    pub castling_rights: u8,
+    pub en_passant: Option<u8>,
+    pub halfmove_clock: u8,
+    pub fullmove_number: u16,
 }
 
 impl ChessBoard {
